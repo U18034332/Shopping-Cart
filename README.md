@@ -41,7 +41,7 @@ The code allows adding items to a cart and calculating the total price while fol
 - Ensures calculations such as totals and discounts remain consistent.
 
 ### 3. Readability: Simplified Code
-- Removed fragile string manipulation and type casting.
+- Removed complex string manipulation and type casting.
 - Clearer method signatures and structured control flow improve understanding.
 
 ### 4. Maintainability: Business Logic in Domain Classes
