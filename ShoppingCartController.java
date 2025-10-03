@@ -38,4 +38,17 @@ public class ShoppingCartController {
         
         return "Item added. Total: " + total;
     }
+
+    @GetMapping("/getTotal")
+    public String getTotal(@RequestParam("cartId") String cartId) {
+        // Get cart
+        Cart cart = carts.get(cartId);
+
+        if (cart == null) {
+            return "Cart not found";
+        }
+
+        BigDecimal total = cart.getTotal();
+        return "Total: " + total;
+    }
 }
