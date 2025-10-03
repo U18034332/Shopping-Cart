@@ -6,6 +6,30 @@ The code allows adding items to a cart and calculating the total price while fol
 
 ---
 
+## Outline of Approach
+1. **Identify Issues in Original Code**
+   - Mixing business logic with controller logic.
+   - Use of `double` for monetary values leading to inaccuracies.
+   - String manipulation and type casting reduced readability.
+   - Wildcard imports and lambdas introduced unnecessary complexity.
+
+2. **Redesign with Domain-Driven Thinking**
+   - Extracted `Item` and `Cart` as separate domain classes.
+   - Controller delegates all calculations and item management to `Cart`.
+
+3. **Ensure Financial Accuracy**
+   - Replaced `double` with `BigDecimal` for all prices and totals.
+
+4. **Improve Maintainability and Testability**
+   - Business logic encapsulated within domain classes.
+   - Controller remains lean and easier to unit test.
+
+5. **Focus on Clarity**
+   - Avoided fragile constructs (lambdas, wildcards).
+   - Used explicit imports and clear control flow.
+
+---
+
 ## Improvements Made
 
 ### 1. Encapsulation: Dedicated Domain Model
@@ -46,5 +70,4 @@ The code allows adding items to a cart and calculating the total price while fol
 4. **Safe Imports**
    - No wildcard imports (`*`).
    - Only essential classes are imported to prevent namespace pollution.
-
 
