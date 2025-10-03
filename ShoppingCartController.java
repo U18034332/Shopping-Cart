@@ -3,6 +3,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.math.BigDecimal;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -11,7 +13,29 @@ import java.util.Map;
 public class ShoppingCartController {
 
     // Store carts in memory
-    private Map<String, Map<String, Item>> carts = new HashMap<>();
+    private Map<String, Cart> carts = new HashMap<>();
 
+    @PostMapping("/addItem")
+    public String addItem(@RequestParam("cartId") String cartId,
+                        @RequestParam("itemName") String itemName,
+                        @RequestParam("price") BigDecimal price,
+                        @RequestParam("quantity") int quantity) {
+        
+        // Get or Create cart
+        Cart cart = carts.get(cartId);
+        if (cart == null) {
+            cart = new Cart();
+            carts.put(cartId, cart);
+        }
 
+        // Add item to cart
+        cart.addItem(itemName, price, quantity);
+
+        //Get total
+        BigDecimal total = cart.getTotal();
+
+        System.out.println("Cart " + cartId + " total: " + total);
+        
+        return "Item added. Total: " + total;
+    }
 }
