@@ -1,13 +1,11 @@
 import java.math.BigDecimal;
 
 public class Item {
-    private String cartId;
-    private String itemName;
-    private BigDecimal price;
+    private final String itemName;
+    private  final BigDecimal price;
     private int quantity;
 
-    public Item(String cartId, String itemName, BigDecimal price, int quantity) {
-        this.cartId = cartId;
+    public Item(String itemName, BigDecimal price, int quantity) {
         this.itemName = itemName;
         this.price = price;
         this.quantity = quantity;
