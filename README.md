@@ -25,7 +25,6 @@ The code allows adding items to a cart and calculating the total price while fol
    - Controller remains lean and easier to unit test.
 
 5. **Focus on Clarity**
-   - Avoided fragile constructs (lambdas, wildcards).
    - Used explicit imports and clear control flow.
 
 ---
