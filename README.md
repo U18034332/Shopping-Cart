@@ -50,7 +50,6 @@ The code allows adding items to a cart and calculating the total price while fol
 
 ### 5. Efficiency: Streamlined Operations
 - Simplified cart creation and item updates with straightforward control structures.
-- Avoided unnecessary complexity (e.g., no lambdas or overuse of streams).
 
 ---
 
