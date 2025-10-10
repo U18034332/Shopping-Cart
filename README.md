@@ -11,7 +11,7 @@ The code allows adding items to a cart and calculating the total price while fol
    - Mixing business logic with controller logic.
    - Use of `double` for monetary values leading to inaccuracies.
    - String manipulation and type casting reduced readability.
-   - Wildcard imports and lambdas introduced unnecessary complexity.
+   - Wildcard imports introduced unnecessary complexity.
 
 2. **Redesign with Domain-Driven Thinking**
    - Extracted `Item` and `Cart` as separate domain classes.
